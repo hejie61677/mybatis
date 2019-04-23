@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 列表查询 -->
+<mapper namespace="pojo">
+	<select id="listCategory" resultType="cn.com.mybatis.pojo.Category">
+		select * from category
+	</select>
+	
+	<select id="findCategoryById" parameterType="int" resultType="cn.com.mybatis.pojo.Category">
+		select * from category where id = #{id}
+	</select>
+	
+	<select id="findCategoryByName" parameterType="java.lang.String" resultType="cn.com.mybatis.pojo.Category">
+		select * from category where name like '%${value}%'
+	</select>
+</mapper>
